@@ -1,5 +1,5 @@
 if __name__ == "__main__":
-    from SpiController2040 import Devices
+    from Spi2040 import Devices
 
     SCK = 22
     COPI = 23
