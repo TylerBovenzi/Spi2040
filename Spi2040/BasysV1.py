@@ -1,4 +1,4 @@
-from micropython-machine import SPI, Pin
+from machine import SPI, Pin
 import time
 
 
