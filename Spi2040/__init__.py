@@ -1,1 +1,1 @@
-from Spi2040.Devices import SpiDevice
+from Spi2040.BasysV1 import SpiDevice

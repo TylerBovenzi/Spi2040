@@ -1,12 +1,12 @@
 if __name__ == "__main__":
-    from Spi2040 import Devices
+    from Spi2040 import BasysV1
 
     SCK = 22
     COPI = 23
     CIPO = 20
 
-    Dev1 = Devices.SpiDevice(SCK, COPI, CIPO, 21, 11)
-    Dev2 = Devices.SpiDevice(SCK, COPI, CIPO, 28, 11)
+    Dev1 = BasysV1.SpiDevice(SCK, COPI, CIPO, 21, 11)
+    Dev2 = BasysV1.SpiDevice(SCK, COPI, CIPO, 28, 11)
 
     msg1 = bytearray()
     msg2 = bytearray()
