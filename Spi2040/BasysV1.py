@@ -1,12 +1,13 @@
 from machine import SPI, Pin
+import time
 
 
 class SpiDevice:
     def __init__(self, sck, copi, cipo, cs, jd):
         self.cs = Pin(cs, mode=Pin.OUT, value=1)
-        self.js = Pin(jd, mode=Pin.IN)
+        self.jd = Pin(jd, mode=Pin.IN)
         self.spi = SPI(0,
-                       baudrate=10000000,
+                       baudrate=12000000,
                        polarity=0,
                        phase=1,
                        bits=8,
@@ -34,3 +35,12 @@ class SpiDevice:
         data = self.spi.read(256)
         self.cs(1)
         return data
+
+    def GetStatus(self):
+        return self.jd()
+
+    def cycleCS(self):
+        self.cs(0)
+        time.sleep(1)
+        self.cs(1)
+
